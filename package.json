@@ -1,0 +1,27 @@
+{
+  "name": "101020193_comp3133_assignment1",
+  "version": "1.0.0",
+  "description": "Assignment 1 for COMP 3133 Full Stack Development II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "graphql",
+    "assignment"
+  ],
+  "author": "Dennis Varghese",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "mongoose": "^6.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

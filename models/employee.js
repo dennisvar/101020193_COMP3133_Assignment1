@@ -1,26 +1,28 @@
 const mongoose = require('mongoose');
 
 const employeeSchema = new mongoose.Schema({
-    firstname: {
+    first_name: {
         type: String,
-        required: true,
-        trim: true
+        required: true
     },
-    lastname: {
+    last_name: {
         type: String,
-        required: true,
-        trim: true
+        required: true
     },
     email: {
         type: String,
         required: true,
-        unique: true,
-        trim: true
+        unique: true
     },
     gender: {
         type: String,
         required: true,
-        enum: ['male', 'female', 'other']
+        enum: ['Male', 'Female', 'Other']
     },
+    salary: {
+        type: Number,
+        required: true
+    }
+});
 
-})
+module.exports = mongoose.model("employee", employeeSchema);

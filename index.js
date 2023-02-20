@@ -122,7 +122,15 @@ const resolvers = {
 
 const app = express()
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server running @ http://localhost:${process.env.PORT}`)
-})
+async function startServer() {
+    const server = new ApolloServer({ typeDefs, resolvers });
+    await server.start();
+    server.applyMiddleware({app})
+
+    app.listen(process.env.PORT, () => {
+        console.log(`Server running @ http://localhost:${process.env.PORT}${server.graphqlPath}`)
+    })
+}
+
+startServer();
 

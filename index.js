@@ -9,6 +9,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const { ApolloServer } = require('apollo-server-express');
+const cors = require("cors");
 
 const typeDefs = require('./graphql/schema')
 const resolvers = require('./graphql/resolvers')
@@ -24,6 +25,8 @@ mongoose.connect(process.env.DB , {
 })
 
 const app = express()
+
+app.use(cors());
 
 async function startServer() {
     const server = new ApolloServer({ typeDefs, resolvers });
